@@ -26,10 +26,14 @@ Partial Class FormPrint
         Me.lblStudentName = New System.Windows.Forms.Label
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel
         Me.Panel2 = New System.Windows.Forms.Panel
-        Me.BtnPhase1 = New System.Windows.Forms.Button
-        Me.BtnPhase2 = New System.Windows.Forms.Button
+        Me.chkPhase2 = New System.Windows.Forms.CheckBox
+        Me.chkPhase1 = New System.Windows.Forms.CheckBox
+        Me.txtYear = New System.Windows.Forms.TextBox
+        Me.Label3 = New System.Windows.Forms.Label
+        Me.txtSearch = New System.Windows.Forms.TextBox
         Me.btnPrintOrderForm = New System.Windows.Forms.Button
         Me.Panel1 = New System.Windows.Forms.Panel
+        Me.Label2 = New System.Windows.Forms.Label
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel
         Me.Button1 = New System.Windows.Forms.Button
         Me.lvPrint = New System.Windows.Forms.ListView
@@ -51,10 +55,6 @@ Partial Class FormPrint
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel
         Me.Button2 = New System.Windows.Forms.Button
         Me.Label1 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.txtSearch = New System.Windows.Forms.TextBox
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.txtYear = New System.Windows.Forms.TextBox
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -115,34 +115,63 @@ Partial Class FormPrint
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.chkPhase2)
+        Me.Panel2.Controls.Add(Me.chkPhase1)
         Me.Panel2.Controls.Add(Me.txtYear)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.txtSearch)
-        Me.Panel2.Controls.Add(Me.BtnPhase1)
-        Me.Panel2.Controls.Add(Me.BtnPhase2)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(263, 3)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(503, 39)
         Me.Panel2.TabIndex = 6
         '
-        'BtnPhase1
+        'chkPhase2
         '
-        Me.BtnPhase1.Location = New System.Drawing.Point(373, 0)
-        Me.BtnPhase1.Name = "BtnPhase1"
-        Me.BtnPhase1.Size = New System.Drawing.Size(64, 39)
-        Me.BtnPhase1.TabIndex = 0
-        Me.BtnPhase1.Text = "Phase 1"
-        Me.BtnPhase1.UseVisualStyleBackColor = True
+        Me.chkPhase2.AutoSize = True
+        Me.chkPhase2.Checked = True
+        Me.chkPhase2.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkPhase2.Location = New System.Drawing.Point(430, 12)
+        Me.chkPhase2.Name = "chkPhase2"
+        Me.chkPhase2.Size = New System.Drawing.Size(65, 17)
+        Me.chkPhase2.TabIndex = 5
+        Me.chkPhase2.Text = "Phase 2"
+        Me.chkPhase2.UseVisualStyleBackColor = True
         '
-        'BtnPhase2
+        'chkPhase1
         '
-        Me.BtnPhase2.Location = New System.Drawing.Point(434, -1)
-        Me.BtnPhase2.Name = "BtnPhase2"
-        Me.BtnPhase2.Size = New System.Drawing.Size(66, 39)
-        Me.BtnPhase2.TabIndex = 0
-        Me.BtnPhase2.Text = "Phase 2"
-        Me.BtnPhase2.UseVisualStyleBackColor = True
+        Me.chkPhase1.AutoSize = True
+        Me.chkPhase1.Checked = True
+        Me.chkPhase1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkPhase1.Location = New System.Drawing.Point(359, 13)
+        Me.chkPhase1.Name = "chkPhase1"
+        Me.chkPhase1.Size = New System.Drawing.Size(65, 17)
+        Me.chkPhase1.TabIndex = 4
+        Me.chkPhase1.Text = "Phase 1"
+        Me.chkPhase1.UseVisualStyleBackColor = True
+        '
+        'txtYear
+        '
+        Me.txtYear.Location = New System.Drawing.Point(253, 9)
+        Me.txtYear.Name = "txtYear"
+        Me.txtYear.Size = New System.Drawing.Size(100, 20)
+        Me.txtYear.TabIndex = 3
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(205, 12)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(42, 13)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "YEAR :"
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Location = New System.Drawing.Point(16, 10)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(183, 20)
+        Me.txtSearch.TabIndex = 1
         '
         'btnPrintOrderForm
         '
@@ -161,6 +190,15 @@ Partial Class FormPrint
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(67, 39)
         Me.Panel1.TabIndex = 5
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(7, 12)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(57, 13)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "SEARCH :"
         '
         'TableLayoutPanel4
         '
@@ -308,38 +346,6 @@ Partial Class FormPrint
         Me.Label1.TabIndex = 3
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(7, 12)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "SEARCH :"
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Location = New System.Drawing.Point(16, 10)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(183, 20)
-        Me.txtSearch.TabIndex = 1
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(205, 12)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(42, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "YEAR :"
-        '
-        'txtYear
-        '
-        Me.txtYear.Location = New System.Drawing.Point(253, 9)
-        Me.txtYear.Name = "txtYear"
-        Me.txtYear.Size = New System.Drawing.Size(100, 20)
-        Me.txtYear.TabIndex = 3
-        '
         'FormPrint
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -387,10 +393,10 @@ Partial Class FormPrint
     Friend WithEvents ColumnHeader20 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader21 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents BtnPhase1 As System.Windows.Forms.Button
-    Friend WithEvents BtnPhase2 As System.Windows.Forms.Button
     Friend WithEvents txtSearch As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtYear As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents chkPhase2 As System.Windows.Forms.CheckBox
+    Friend WithEvents chkPhase1 As System.Windows.Forms.CheckBox
 End Class

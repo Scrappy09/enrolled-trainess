@@ -47,7 +47,7 @@ Partial Class Form1
         Me.BtnLogin.Location = New System.Drawing.Point(134, 164)
         Me.BtnLogin.Name = "BtnLogin"
         Me.BtnLogin.Size = New System.Drawing.Size(94, 31)
-        Me.BtnLogin.TabIndex = 1
+        Me.BtnLogin.TabIndex = 0
         Me.BtnLogin.Text = "&Login"
         Me.BtnLogin.UseVisualStyleBackColor = True
         '
@@ -78,6 +78,7 @@ Partial Class Form1
         Me.TxtUsername.Name = "TxtUsername"
         Me.TxtUsername.Size = New System.Drawing.Size(138, 31)
         Me.TxtUsername.TabIndex = 4
+        Me.TxtUsername.Text = "admin"
         '
         'Txtpassword
         '
@@ -87,6 +88,7 @@ Partial Class Form1
         Me.Txtpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.Txtpassword.Size = New System.Drawing.Size(138, 29)
         Me.Txtpassword.TabIndex = 5
+        Me.Txtpassword.Text = "admin123"
         '
         'Form1
         '

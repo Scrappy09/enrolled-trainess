@@ -3,13 +3,11 @@ Public Class FormPrint
     Public Mcity As String
 
 
-    Private Sub loadRecords(ByVal phase As String)
+    Private Sub loadRecords()
         Dim myCmd As New MySqlCommand
-        If phase <> "" Then
-            myCmd.CommandText = "SELECT Fname, Sex, Age, Bday, Stat, HomeA, City, Num, Email, Tribe, Religion, EA, TA, Phase, Yearg FROM vsbt WHERE (Sex LIKE '" & txtSearch.Text & "%' OR Yearg LIKE '" & txtYear.Text & "%' )AND City LIKE '%" & Mcity & "%' AND phase = " & phase & " ;"
-        Else
-            myCmd.CommandText = "SELECT Fname, Sex, Age, Bday, Stat, HomeA, City, Num, Email, Tribe, Religion, EA, TA, Phase, Yearg FROM vsbt WHERE City LIKE '%" & Mcity & "%';"
-        End If
+
+        myCmd.CommandText = "SELECT Fname, Sex, Age, Bday, Stat, HomeA, City, Num, Email, Tribe, Religion, EA, TA, Phase, Yearg FROM vsbt WHERE City LIKE '%" & Mcity & "%';"
+
 
         myCmd.Connection = myConn
 
@@ -57,16 +55,45 @@ Public Class FormPrint
     End Sub
 
     Private Sub FormPrint_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.loadRecords("")
+        Me.loadRecords()
         lblStudentName.Text = Mcity
     End Sub
 
     Private Sub searchStudent()
         Dim myCmd As New MySqlCommand
-        If txtYear.Text <> "" Then
-            myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE (Fname LIKE '%" & txtSearch.Text & "%' OR Tribe LIKE '" & txtSearch.Text & "%' OR Religion LIKE '" & txtSearch.Text & "%' OR EA LIKE '" & txtSearch.Text & "%' OR TA LIKE '" & txtSearch.Text & "%' OR Stat LIKE '" & txtSearch.Text & "%' OR HomeA LIKE '" & txtSearch.Text & "%' OR Yearg LIKE '%" & txtYear.Text & "%' OR Age LIKE '" & txtSearch.Text & "%' OR Sex LIKE '" & txtSearch.Text & "%' )AND Yearg LIKE '" & txtYear.Text & "%' OR City LIKE '" & Mcity & "' ORDER BY Fname ;"
-        Else
-            myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE (Fname LIKE '%" & txtSearch.Text & "%' Or Stat LIKE '" & txtSearch.Text & "%' OR Tribe LIKE '" & txtSearch.Text & "%' OR Religion LIKE '" & txtSearch.Text & "%' OR TA LIKE '" & txtSearch.Text & "%' OR EA LIKE '" & txtSearch.Text & "%' OR HomeA LIKE '" & txtSearch.Text & "%' OR City LIKE '" & txtSearch.Text & "%' OR Age LIKE '" & txtSearch.Text & "%' OR Sex LIKE '" & txtSearch.Text & "%') ORDER BY Fname ;"
+
+        If txtSearch.Text = "" And txtYear.Text = "" Then
+            myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt ORDER BY Fname;"
+        End If
+
+        If txtSearch.Text <> "" And txtYear.Text = "" Then
+            If chkPhase1.Checked = True And chkPhase2.Checked = True Then
+                myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE (Fname LIKE '%" & txtSearch.Text & "%' Or Stat LIKE '" & txtSearch.Text & "%' OR Tribe LIKE '" & txtSearch.Text & "%' OR Religion LIKE '" & txtSearch.Text & "%' OR TA LIKE '" & txtSearch.Text & "%' OR EA LIKE '" & txtSearch.Text & "%' OR HomeA LIKE '" & txtSearch.Text & "%' OR City LIKE '" & txtSearch.Text & "%' OR Age LIKE '" & txtSearch.Text & "%' OR Sex LIKE '" & txtSearch.Text & "%') AND City LIKE '" & Mcity & "' ORDER BY Fname ;"
+            ElseIf chkPhase1.Checked = True And chkPhase2.Checked = False Then
+                myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE (Fname LIKE '%" & txtSearch.Text & "%' Or Stat LIKE '" & txtSearch.Text & "%' OR Tribe LIKE '" & txtSearch.Text & "%' OR Religion LIKE '" & txtSearch.Text & "%' OR TA LIKE '" & txtSearch.Text & "%' OR EA LIKE '" & txtSearch.Text & "%' OR HomeA LIKE '" & txtSearch.Text & "%' OR City LIKE '" & txtSearch.Text & "%' OR Age LIKE '" & txtSearch.Text & "%' OR Sex LIKE '" & txtSearch.Text & "%') AND City LIKE '" & Mcity & "' AND phase =1 ORDER BY Fname ;"
+            ElseIf chkPhase1.Checked = False And chkPhase2.Checked = True Then
+                myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE (Fname LIKE '%" & txtSearch.Text & "%' Or Stat LIKE '" & txtSearch.Text & "%' OR Tribe LIKE '" & txtSearch.Text & "%' OR Religion LIKE '" & txtSearch.Text & "%' OR TA LIKE '" & txtSearch.Text & "%' OR EA LIKE '" & txtSearch.Text & "%' OR HomeA LIKE '" & txtSearch.Text & "%' OR City LIKE '" & txtSearch.Text & "%' OR Age LIKE '" & txtSearch.Text & "%' OR Sex LIKE '" & txtSearch.Text & "%') AND City LIKE '" & Mcity & "' AND phase =2 ORDER BY Fname ;"
+            End If
+        End If
+
+        If txtSearch.Text = "" And txtYear.Text <> "" Then
+            If chkPhase1.Checked = True And chkPhase2.Checked = True Then
+                myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE  yearg ='" & txtYear.Text & "' AND City LIKE '%" & Mcity & "%' ORDER BY Fname ;"
+            ElseIf chkPhase1.Checked = True And chkPhase2.Checked = False Then
+                myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE yearg ='" & txtYear.Text & "' AND City LIKE '%" & Mcity & "%' AND phase =1 ORDER BY Fname ;"
+            ElseIf chkPhase1.Checked = False And chkPhase2.Checked = True Then
+                myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE yearg ='" & txtYear.Text & "' AND City LIKE '%" & Mcity & "%' AND phase =2 ORDER BY Fname ;"
+            End If
+        End If
+
+        If txtSearch.Text <> "" And txtYear.Text <> "" Then
+            If chkPhase1.Checked = True And chkPhase2.Checked = True Then
+                myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE (Fname LIKE '%" & txtSearch.Text & "%' Or Stat LIKE '" & txtSearch.Text & "%' OR Tribe LIKE '" & txtSearch.Text & "%' OR Religion LIKE '" & txtSearch.Text & "%' OR TA LIKE '" & txtSearch.Text & "%' OR EA LIKE '" & txtSearch.Text & "%' OR HomeA LIKE '" & txtSearch.Text & "%' OR City LIKE '" & txtSearch.Text & "%' OR Age LIKE '" & txtSearch.Text & "%' OR Sex LIKE '" & txtSearch.Text & "%')AND yearg = '" & txtYear.Text & "' AND City LIKE '" & Mcity & "' ORDER BY Fname ;"
+            ElseIf chkPhase1.Checked = True And chkPhase2.Checked = False Then
+                myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE (Fname LIKE '%" & txtSearch.Text & "%' Or Stat LIKE '" & txtSearch.Text & "%' OR Tribe LIKE '" & txtSearch.Text & "%' OR Religion LIKE '" & txtSearch.Text & "%' OR TA LIKE '" & txtSearch.Text & "%' OR EA LIKE '" & txtSearch.Text & "%' OR HomeA LIKE '" & txtSearch.Text & "%' OR City LIKE '" & txtSearch.Text & "%' OR Age LIKE '" & txtSearch.Text & "%' OR Sex LIKE '" & txtSearch.Text & "%')AND yearg = '" & txtYear.Text & "' AND City LIKE '" & Mcity & "' AND phase =1 ORDER BY Fname ;"
+            ElseIf chkPhase1.Checked = False And chkPhase2.Checked = True Then
+                myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE (Fname LIKE '%" & txtSearch.Text & "%' Or Stat LIKE '" & txtSearch.Text & "%' OR Tribe LIKE '" & txtSearch.Text & "%' OR Religion LIKE '" & txtSearch.Text & "%' OR TA LIKE '" & txtSearch.Text & "%' OR EA LIKE '" & txtSearch.Text & "%' OR HomeA LIKE '" & txtSearch.Text & "%' OR City LIKE '" & txtSearch.Text & "%' OR Age LIKE '" & txtSearch.Text & "%' OR Sex LIKE '" & txtSearch.Text & "%')AND yearg = '" & txtYear.Text & "' AND City LIKE '" & Mcity & "' AND phase =2 ORDER BY Fname ;"
+            End If
         End If
 
         myCmd.Connection = myConn
@@ -112,27 +139,37 @@ Public Class FormPrint
         myRead = Nothing
 
     End Sub
-    Private Sub BtnPhase1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnPhase1.Click
-        Me.loadRecords(1)
+    Private Sub BtnPhase1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        'Me.loadRecords(1)
+
+        Call searchStudent()
     End Sub
 
-    Private Sub BtnPhase2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnPhase2.Click
-        loadRecords(2)
-
+    Private Sub BtnPhase2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        'loadRecords(2)
+        Call searchStudent()
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Me.Close()
     End Sub
 
-    Private Sub txtSearch_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSearch.TextChanged, txtYear.TextChanged
-        If Not txtSearch.Text = "" Then
+    Private Sub txtSearch_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSearch.TextChanged, txtYear.TextChanged, chkPhase1.CheckedChanged, chkPhase2.CheckedChanged
+        If Not txtSearch.Text = "" Or Not txtYear.Text = "" Then
             Me.searchStudent()
 
         Else
-            Me.loadRecords("")
+            Me.loadRecords()
 
         End If
 
+    End Sub
+
+    Private Sub chkPhase1_2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkPhase1.CheckedChanged, chkPhase2.CheckedChanged
+        'If chkPhase1.Checked = True And chkPhase2.Checked = True Then
+        'Call loadRecords()
+        'Else
+        'Call searchStudent()
+        'End If
     End Sub
 End Class
