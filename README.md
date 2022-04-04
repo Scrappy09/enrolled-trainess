@@ -6,8 +6,7 @@ import database on MySQL Query
 
 Todo's
 1. Segregate data
-2. Can search data on print 
-3. Can print data base on search data
+2. Can print data base on search data
 
 
 Tools needed:
