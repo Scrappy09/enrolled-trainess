@@ -44,9 +44,7 @@ Partial Class Formmain
         Me.ColumnHeader9 = New System.Windows.Forms.ColumnHeader
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.BrowseRecordsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.BtnRefresh = New System.Windows.Forms.Button
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -55,7 +53,6 @@ Partial Class Formmain
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.BtnRefresh)
         Me.Panel1.Controls.Add(Me.Logout)
         Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel1.Controls.Add(Me.MenuStrip1)
@@ -192,7 +189,7 @@ Partial Class Formmain
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BrowseRecordsToolStripMenuItem, Me.PrintToolStripMenuItem, Me.ReportsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BrowseRecordsToolStripMenuItem, Me.ReportsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1257, 24)
@@ -205,26 +202,11 @@ Partial Class Formmain
         Me.BrowseRecordsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.BrowseRecordsToolStripMenuItem.Text = "Records"
         '
-        'PrintToolStripMenuItem
-        '
-        Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.PrintToolStripMenuItem.Text = "Print"
-        '
         'ReportsToolStripMenuItem
         '
         Me.ReportsToolStripMenuItem.Name = "ReportsToolStripMenuItem"
         Me.ReportsToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
         Me.ReportsToolStripMenuItem.Text = "Reports"
-        '
-        'BtnRefresh
-        '
-        Me.BtnRefresh.Location = New System.Drawing.Point(287, 3)
-        Me.BtnRefresh.Name = "BtnRefresh"
-        Me.BtnRefresh.Size = New System.Drawing.Size(75, 23)
-        Me.BtnRefresh.TabIndex = 1
-        Me.BtnRefresh.Text = "Refresh"
-        Me.BtnRefresh.UseVisualStyleBackColor = True
         '
         'Formmain
         '
@@ -250,7 +232,6 @@ Partial Class Formmain
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents BrowseRecordsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PrintToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents lvMain As System.Windows.Forms.ListView
     Friend WithEvents ColumnHeader12 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader14 As System.Windows.Forms.ColumnHeader
@@ -268,5 +249,4 @@ Partial Class Formmain
     Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ReportsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents BtnRefresh As System.Windows.Forms.Button
 End Class

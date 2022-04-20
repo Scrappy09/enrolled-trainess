@@ -1,13 +1,28 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class FormPrint
+    Dim fname
     Public Mcity As String
+
+    Dim sql As String
 
 
     Private Sub loadRecords()
         Dim myCmd As New MySqlCommand
 
-        myCmd.CommandText = "SELECT Fname, Sex, Age, Bday, Stat, HomeA, City, Num, Email, Tribe, Religion, EA, TA, Phase, Yearg FROM vsbt WHERE City LIKE '%" & Mcity & "%';"
+        Dim phasecondition As String
 
+        If chkPhase1.Checked = True And chkPhase2.Checked = True Then
+            phasecondition = "AND (phase=1 OR phase=2)"
+        ElseIf chkPhase1.Checked = True And chkPhase2.Checked = False Then
+            phasecondition = "AND phase=1"
+        ElseIf chkPhase1.Checked = False And chkPhase2.Checked = True Then
+            phasecondition = "AND phase=2"
+        Else
+            phasecondition = ""
+        End If
+
+        myCmd.CommandText = "SELECT Fname, Sex, Age, Bday, Stat, HomeA, City, Num, Email, Tribe, Religion, EA, TA, Phase, Yearg FROM vsbt WHERE City LIKE '%" & Mcity & "%' " & phasecondition & " ;"
+        sql = myCmd.CommandText
 
         myCmd.Connection = myConn
 
@@ -55,8 +70,9 @@ Public Class FormPrint
     End Sub
 
     Private Sub FormPrint_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.loadRecords()
         lblStudentName.Text = Mcity
+        Me.loadRecords()
+
     End Sub
 
     Private Sub searchStudent()
@@ -98,6 +114,8 @@ Public Class FormPrint
 
         myCmd.Connection = myConn
 
+        sql = myCmd.CommandText
+
         Dim myRead As MySqlDataReader = Nothing
         Dim mItem As ListViewItem
 
@@ -113,6 +131,8 @@ Public Class FormPrint
                 Do While myRead.Read()
                     mItem = New ListViewItem()
                     mItem = lvPrint.Items.Add(myRead.GetString("Fname"))
+                    fname = mItem
+
 
                     mItem.SubItems.Add(myRead.GetString("Sex"))
                     mItem.SubItems.Add(myRead.GetString("Age"))
@@ -171,5 +191,13 @@ Public Class FormPrint
         'Else
         'Call searchStudent()
         'End If
+    End Sub
+
+    Private Sub btnPrintOrderForm_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPrintOrderForm.Click
+        Dim report As New frmPrintForm
+        report.vReportType = "vsbt"
+        report.vsbtSQL = sql
+        report.ShowDialog()
+
     End Sub
 End Class

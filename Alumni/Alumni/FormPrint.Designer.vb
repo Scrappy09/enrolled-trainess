@@ -353,6 +353,7 @@ Partial Class FormPrint
         Me.ClientSize = New System.Drawing.Size(775, 432)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "FormPrint"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormPrint"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()

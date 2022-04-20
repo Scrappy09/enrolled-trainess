@@ -41,7 +41,7 @@ Public Class Formaddedit
 
     Private Sub loadRecords()
         Dim myCmd As New MySqlCommand
-        myCmd.CommandText = "SELECT Fname, Sex, Age, Bday, Stat, HomeA, City, Num, Email, Tribe, Religion, EA, TA, Phase, Yearg FROM vsbt ;"
+        myCmd.CommandText = "SELECT Fname, Sex, round((floor(datediff(now(),bday))/360)) AS 'age', Bday, Stat, HomeA, City, Num, Email, Tribe, Religion, EA, TA, Phase, Yearg FROM vsbt ;"
         myCmd.Connection = myConn
 
 
@@ -311,9 +311,12 @@ Errtrap:
     Private Sub searchStudent()
         Dim myCmd As New MySqlCommand
         If txtFilter.Text <> "" Then
-            myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE (Fname LIKE '%" & TxtSearch.Text & "%' OR Tribe LIKE '" & TxtSearch.Text & "%' OR Religion LIKE '" & TxtSearch.Text & "%' OR EA LIKE '" & TxtSearch.Text & "%' OR TA LIKE '" & TxtSearch.Text & "%' OR HomeA LIKE '" & TxtSearch.Text & "%' OR City LIKE '" & TxtSearch.Text & "%' OR Age LIKE '" & TxtSearch.Text & "%' OR Sex LIKE '" & TxtSearch.Text & "%' OR Yearg LIKE '" & TxtSearch.Text & "%') AND Phase ='" & txtFilter.Text & "' ORDER BY Fname ;"
+            myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE (Fname LIKE '%" & TxtSearch.Text & "%' OR Tribe LIKE '" & TxtSearch.Text & "%' OR Religion LIKE '" & TxtSearch.Text & "%' OR EA LIKE '" & TxtSearch.Text & "%' OR TA LIKE '" & TxtSearch.Text & "%' OR HomeA LIKE '" & TxtSearch.Text & "%' OR City LIKE '" & TxtSearch.Text & "%' OR Age LIKE '" & TxtSearch.Text & "%' OR Stat LIKE '" & TxtSearch.Text & "%' OR Sex LIKE '" & TxtSearch.Text & "%' OR Yearg LIKE '" & TxtSearch.Text & "%') AND Phase ='" & txtFilter.Text & "' ORDER BY Fname ;"
+            If txtFilter.Text  <> "" And TxtSearch.Text  <> "" Then
+                myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE (Fname LIKE '%" & TxtSearch.Text & "%' Or Stat LIKE '" & TxtSearch.Text & "%' OR Tribe LIKE '" & TxtSearch.Text & "%' OR Religion LIKE '" & TxtSearch.Text & "%' OR TA LIKE '" & TxtSearch.Text & "%' OR EA LIKE '" & TxtSearch.Text & "%' OR HomeA LIKE '" & TxtSearch.Text & "%' OR City LIKE '" & TxtSearch.Text & "%' OR Age LIKE '" & TxtSearch.Text & "%' OR Sex LIKE '" & TxtSearch.Text & "%') and (Fname LIKE '%" & txtFilter.Text & "%' Or Stat LIKE '" & txtFilter.Text & "%' OR Tribe LIKE '" & txtFilter.Text & "%' OR Religion LIKE '" & txtFilter.Text & "%' OR TA LIKE '" & txtFilter.Text & "%' OR EA LIKE '" & txtFilter.Text & "%' OR HomeA LIKE '" & txtFilter.Text & "%' OR City LIKE '" & txtFilter.Text & "%' OR Age LIKE '" & txtFilter.Text & "%' OR Sex LIKE '" & txtFilter.Text & "%') ORDER BY Fname ;"
+            End If
         Else
-            myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE Fname LIKE '%" & TxtSearch.Text & "%' OR Tribe LIKE '" & TxtSearch.Text & "%' OR Religion LIKE '" & TxtSearch.Text & "%' OR TA LIKE '" & TxtSearch.Text & "%' OR EA LIKE '" & TxtSearch.Text & "%' OR HomeA LIKE '" & TxtSearch.Text & "%' OR City LIKE '" & TxtSearch.Text & "%' OR Age LIKE '" & TxtSearch.Text & "%' OR Sex LIKE '" & TxtSearch.Text & "%' OR Yearg LIKE '" & TxtSearch.Text & "%'ORDER BY Fname ;"
+            myCmd.CommandText = "SELECT Fname, Sex, Stat, Age, Bday, HomeA, City, Tribe, TA, Religion, Num, Yearg, EA, Email, Phase FROM vsbt WHERE Fname LIKE '%" & TxtSearch.Text & "%' OR Tribe LIKE '" & TxtSearch.Text & "%' OR Religion LIKE '" & TxtSearch.Text & "%' OR TA LIKE '" & TxtSearch.Text & "%' OR EA LIKE '" & TxtSearch.Text & "%' OR HomeA LIKE '" & TxtSearch.Text & "%' OR City LIKE '" & TxtSearch.Text & "%' OR Age LIKE '" & TxtSearch.Text & "%' OR Sex LIKE '" & TxtSearch.Text & "%' OR Yearg LIKE '" & TxtSearch.Text & "%' OR Stat LIKE '" & TxtSearch.Text & "%'ORDER BY Fname ;"
         End If
 
         myCmd.Connection = myConn
@@ -370,4 +373,7 @@ Errtrap:
     End Sub
 
 
+    Private Sub Label15_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label15.Click
+
+    End Sub
 End Class

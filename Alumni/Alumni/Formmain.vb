@@ -52,6 +52,7 @@ Public Class Formmain
 
     Private Sub BrowseRecordsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BrowseRecordsToolStripMenuItem.Click
         Formaddedit.ShowDialog()
+        Call loadRecord()
     End Sub
 
     Private Sub lvMain_ItemSelectionChanged(ByVal sender As Object, ByVal e As System.Windows.Forms.ListViewItemSelectionChangedEventArgs)
@@ -125,9 +126,6 @@ Public Class Formmain
 
     Private Sub ReportsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReportsToolStripMenuItem.Click
         FormReports.Show()
-    End Sub
-
-    Private Sub BtnRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRefresh.Click
-        Me.loadRecord()
+        Call loadRecord()
     End Sub
 End Class

@@ -144,6 +144,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rptEnrolledTraineesProfile.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +182,7 @@
     <EmbeddedResource Include="rptEnrolledTraineesProfile.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptEnrolledTraineesProfile.vb</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

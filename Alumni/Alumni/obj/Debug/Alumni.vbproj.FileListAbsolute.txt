@@ -1,6 +1,9 @@
-D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.exe
-D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.xml
-D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.pdb
+D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\bin\Debug\Alumni.exe.config
+D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\bin\Debug\rptEnrolledTraineesProfile.rpt
+D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\bin\Debug\frmPrintForm.resx
+D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\bin\Debug\frmPrintForm.Designer.vb
+D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\bin\Debug\frmPrintForm.vb
+D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\bin\Debug\rptEnrolledTraineesProfile.vb
 D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\bin\Debug\Alumni.exe
 D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\bin\Debug\Alumni.pdb
 D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\bin\Debug\Alumni.xml
@@ -11,10 +14,9 @@ D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.Formaddedit.
 D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.Formmain.resources
 D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.FormPrint.resources
 D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.FormReports.resources
+D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.frmPrintForm.resources
 D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.Resources.resources
 D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.vbproj.GenerateResource.Cache
-D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\bin\Debug\Alumni.exe.config
-D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.frmPrintForm.resources
-D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\bin\Debug\frmPrintForm.resx
-D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\bin\Debug\frmPrintForm.Designer.vb
-D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\bin\Debug\frmPrintForm.vb
+D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.exe
+D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.xml
+D:\SCHOOL\Visual Basic file\Projects\Alumni\Alumni\obj\Debug\Alumni.pdb

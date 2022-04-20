@@ -24,6 +24,9 @@ Partial Class FormReports
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.Button10 = New System.Windows.Forms.Button
+        Me.Button9 = New System.Windows.Forms.Button
+        Me.Button8 = New System.Windows.Forms.Button
         Me.Button7 = New System.Windows.Forms.Button
         Me.Button6 = New System.Windows.Forms.Button
         Me.Button5 = New System.Windows.Forms.Button
@@ -46,6 +49,9 @@ Partial Class FormReports
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button10)
+        Me.GroupBox1.Controls.Add(Me.Button9)
+        Me.GroupBox1.Controls.Add(Me.Button8)
         Me.GroupBox1.Controls.Add(Me.Button7)
         Me.GroupBox1.Controls.Add(Me.Button6)
         Me.GroupBox1.Controls.Add(Me.Button5)
@@ -61,6 +67,33 @@ Partial Class FormReports
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Places"
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(165, 169)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(97, 38)
+        Me.Button10.TabIndex = 10
+        Me.Button10.Text = "Matalam"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Button9
+        '
+        Me.Button9.Location = New System.Drawing.Point(62, 169)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(97, 38)
+        Me.Button9.TabIndex = 9
+        Me.Button9.Text = "Maguindanao"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(62, 113)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(97, 38)
+        Me.Button8.TabIndex = 8
+        Me.Button8.Text = "Antipas"
+        Me.Button8.UseVisualStyleBackColor = True
         '
         'Button7
         '
@@ -84,25 +117,25 @@ Partial Class FormReports
         '
         Me.Button5.Location = New System.Drawing.Point(268, 113)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(86, 38)
+        Me.Button5.Size = New System.Drawing.Size(97, 38)
         Me.Button5.TabIndex = 5
-        Me.Button5.Text = "Roxas"
+        Me.Button5.Text = "Pres. Roxas"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(360, 113)
+        Me.Button4.Location = New System.Drawing.Point(380, 113)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(89, 38)
+        Me.Button4.Size = New System.Drawing.Size(97, 38)
         Me.Button4.TabIndex = 4
         Me.Button4.Text = "Makilala"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(71, 58)
+        Me.Button3.Location = New System.Drawing.Point(62, 58)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(88, 36)
+        Me.Button3.Size = New System.Drawing.Size(97, 36)
         Me.Button3.TabIndex = 3
         Me.Button3.Text = "Arakan"
         Me.Button3.UseVisualStyleBackColor = True
@@ -120,16 +153,16 @@ Partial Class FormReports
         '
         Me.Button1.Location = New System.Drawing.Point(268, 58)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(86, 36)
+        Me.Button1.Size = New System.Drawing.Size(97, 36)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Kidapwan"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'BtnMagpet
         '
-        Me.BtnMagpet.Location = New System.Drawing.Point(360, 58)
+        Me.BtnMagpet.Location = New System.Drawing.Point(380, 58)
         Me.BtnMagpet.Name = "BtnMagpet"
-        Me.BtnMagpet.Size = New System.Drawing.Size(89, 36)
+        Me.BtnMagpet.Size = New System.Drawing.Size(97, 36)
         Me.BtnMagpet.TabIndex = 0
         Me.BtnMagpet.Text = "Magpet"
         Me.BtnMagpet.UseVisualStyleBackColor = True
@@ -141,6 +174,7 @@ Partial Class FormReports
         Me.ClientSize = New System.Drawing.Size(592, 326)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FormReports"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormReports"
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
@@ -157,4 +191,7 @@ Partial Class FormReports
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents Button8 As System.Windows.Forms.Button
+    Friend WithEvents Button9 As System.Windows.Forms.Button
+    Friend WithEvents Button10 As System.Windows.Forms.Button
 End Class

@@ -76,9 +76,10 @@ Partial Class Formaddedit
         Me.Label5 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
         Me.Panel1 = New System.Windows.Forms.Panel
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.txtFilter = New System.Windows.Forms.TextBox
         Me.Label15 = New System.Windows.Forms.Label
         Me.TxtSearch = New System.Windows.Forms.TextBox
-        Me.txtFilter = New System.Windows.Forms.TextBox
         Me.tblCustomer.SuspendLayout()
         Me.grp_Student.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -405,11 +406,13 @@ Partial Class Formaddedit
         'DTPBirth
         '
         Me.DTPBirth.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTPBirth.CustomFormat = "yyyy-MM-dd"
         Me.DTPBirth.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTPBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DTPBirth.Location = New System.Drawing.Point(614, 70)
         Me.DTPBirth.Margin = New System.Windows.Forms.Padding(2)
         Me.DTPBirth.Name = "DTPBirth"
-        Me.DTPBirth.Size = New System.Drawing.Size(151, 20)
+        Me.DTPBirth.Size = New System.Drawing.Size(100, 20)
         Me.DTPBirth.TabIndex = 79
         '
         'TxtFname
@@ -561,6 +564,7 @@ Partial Class Formaddedit
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.txtFilter)
         Me.Panel1.Controls.Add(Me.Label15)
         Me.Panel1.Controls.Add(Me.TxtSearch)
@@ -569,10 +573,26 @@ Partial Class Formaddedit
         Me.Panel1.Size = New System.Drawing.Size(325, 53)
         Me.Panel1.TabIndex = 11
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(71, 33)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(35, 13)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Filter :"
+        '
+        'txtFilter
+        '
+        Me.txtFilter.Location = New System.Drawing.Point(112, 30)
+        Me.txtFilter.Name = "txtFilter"
+        Me.txtFilter.Size = New System.Drawing.Size(198, 20)
+        Me.txtFilter.TabIndex = 2
+        '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(40, 20)
+        Me.Label15.Location = New System.Drawing.Point(49, 11)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(57, 13)
         Me.Label15.TabIndex = 1
@@ -584,13 +604,6 @@ Partial Class Formaddedit
         Me.TxtSearch.Name = "TxtSearch"
         Me.TxtSearch.Size = New System.Drawing.Size(198, 20)
         Me.TxtSearch.TabIndex = 0
-        '
-        'txtFilter
-        '
-        Me.txtFilter.Location = New System.Drawing.Point(112, 30)
-        Me.txtFilter.Name = "txtFilter"
-        Me.txtFilter.Size = New System.Drawing.Size(198, 20)
-        Me.txtFilter.TabIndex = 2
         '
         'Formaddedit
         '
@@ -665,4 +678,5 @@ Partial Class Formaddedit
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
     Friend WithEvents txtFilter As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

@@ -44,6 +44,7 @@ Partial Class frmPrintForm
         Me.ClientSize = New System.Drawing.Size(656, 315)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Name = "frmPrintForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmPrintForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
