@@ -467,6 +467,7 @@ Partial Class Formaddedit
         '
         'TxtAge
         '
+        Me.TxtAge.Enabled = False
         Me.TxtAge.Location = New System.Drawing.Point(513, 71)
         Me.TxtAge.Name = "TxtAge"
         Me.TxtAge.Size = New System.Drawing.Size(46, 20)
@@ -529,6 +530,7 @@ Partial Class Formaddedit
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.Enabled = False
         Me.Label7.Location = New System.Drawing.Point(510, 55)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(29, 13)

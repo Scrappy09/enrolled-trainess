@@ -75,7 +75,7 @@ Public Class Formmain
     End Sub
     Private Sub loadRecord()
         Dim myCmd As New MySqlCommand
-        myCmd.CommandText = "SELECT Stud, Fname, Sex, Age, Bday, Stat, HomeA, City, Num, Email, Tribe, Religion, EA, TA, Phase, Yearg FROM vsbt ;"
+        myCmd.CommandText = "SELECT Stud, Fname, Sex, round((floor(datediff(now(),bday))/360)) AS 'age', Bday, Stat, HomeA, City, Num, Email, Tribe, Religion, EA, TA, Phase, Yearg FROM vsbt ;"
         myCmd.Connection = myConn
 
 

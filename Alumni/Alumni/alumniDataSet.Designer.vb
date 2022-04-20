@@ -794,7 +794,7 @@ Partial Public Class alumniDataSet
                     ByVal Yearg As String,  _
                     ByVal HomeA As String,  _
                     ByVal City As String,  _
-                    ByVal Age As String,  _
+                    ByVal Age As Short,  _
                     ByVal EA As String,  _
                     ByVal Email As String,  _
                     ByVal Phase As String) As vsbtRow
@@ -868,7 +868,7 @@ Partial Public Class alumniDataSet
             MyBase.Columns.Add(Me.columnHomeA)
             Me.columnCity = New Global.System.Data.DataColumn("City", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCity)
-            Me.columnAge = New Global.System.Data.DataColumn("Age", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnAge = New Global.System.Data.DataColumn("Age", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAge)
             Me.columnEA = New Global.System.Data.DataColumn("EA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEA)
@@ -902,7 +902,6 @@ Partial Public Class alumniDataSet
             Me.columnCity.AllowDBNull = false
             Me.columnCity.MaxLength = 45
             Me.columnAge.AllowDBNull = false
-            Me.columnAge.MaxLength = 45
             Me.columnEA.AllowDBNull = false
             Me.columnEA.MaxLength = 45
             Me.columnEmail.AllowDBNull = false
@@ -1221,9 +1220,9 @@ Partial Public Class alumniDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Property Age() As String
+        Public Property Age() As Short
             Get
-                Return CType(Me(Me.tablevsbt.AgeColumn),String)
+                Return CType(Me(Me.tablevsbt.AgeColumn),Short)
             End Get
             Set
                 Me(Me.tablevsbt.AgeColumn) = value

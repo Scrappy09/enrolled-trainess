@@ -232,7 +232,7 @@ Errtrap:
 
             ' UPDATE CUSTOMER
             If updateStudent(TxtFname.Text, CBSex.Text, CBStatus.Text, TxtAge.Text, DTPBirth.Text, TxtHomeA.Text, TxtCity.Text, TxtTribe.Text, TxtTradeArea.Text, TxtReligion.Text, TxtNumber.Text, TxtYearg.Text, TxtEA.Text, TxtEmail.Text, TxtPhase.Text) = True Then
-                MsgBox("Customer Information Updated!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly)
+                MsgBox("Information Updated!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly)
                 Me.loadRecords()
 
                 grp_Student.Enabled = False
@@ -356,7 +356,7 @@ Errtrap:
 
             myRead.Close()
         Catch ex As Exception
-            MsgBox(ex.ToString, MsgBoxStyle.Exclamation, "Error: Load Products")
+            MsgBox(ex.ToString, MsgBoxStyle.Exclamation, "Error: Load Records")
         End Try
         myCmd = Nothing
         myRead = Nothing
@@ -374,6 +374,10 @@ Errtrap:
 
 
     Private Sub Label15_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label15.Click
+
+    End Sub
+
+    Private Sub CBStatus_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBStatus.SelectedIndexChanged
 
     End Sub
 End Class

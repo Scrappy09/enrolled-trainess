@@ -24,17 +24,10 @@ Partial Class FormReports
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.Button10 = New System.Windows.Forms.Button
-        Me.Button9 = New System.Windows.Forms.Button
-        Me.Button8 = New System.Windows.Forms.Button
         Me.Button7 = New System.Windows.Forms.Button
-        Me.Button6 = New System.Windows.Forms.Button
-        Me.Button5 = New System.Windows.Forms.Button
-        Me.Button4 = New System.Windows.Forms.Button
-        Me.Button3 = New System.Windows.Forms.Button
-        Me.Button2 = New System.Windows.Forms.Button
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.BtnMagpet = New System.Windows.Forms.Button
+        Me.CBcity = New System.Windows.Forms.ComboBox
+        Me.BtnOpenRecords = New System.Windows.Forms.Button
+        Me.Label1 = New System.Windows.Forms.Label
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -44,154 +37,78 @@ Partial Class FormReports
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Location = New System.Drawing.Point(1, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(593, 326)
+        Me.Panel1.Size = New System.Drawing.Size(445, 235)
         Me.Panel1.TabIndex = 0
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button10)
-        Me.GroupBox1.Controls.Add(Me.Button9)
-        Me.GroupBox1.Controls.Add(Me.Button8)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.BtnOpenRecords)
+        Me.GroupBox1.Controls.Add(Me.CBcity)
         Me.GroupBox1.Controls.Add(Me.Button7)
-        Me.GroupBox1.Controls.Add(Me.Button6)
-        Me.GroupBox1.Controls.Add(Me.Button5)
-        Me.GroupBox1.Controls.Add(Me.Button4)
-        Me.GroupBox1.Controls.Add(Me.Button3)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.BtnMagpet)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(593, 326)
+        Me.GroupBox1.Size = New System.Drawing.Size(440, 231)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Places"
         '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(165, 169)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(97, 38)
-        Me.Button10.TabIndex = 10
-        Me.Button10.Text = "Matalam"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
-        'Button9
-        '
-        Me.Button9.Location = New System.Drawing.Point(62, 169)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(97, 38)
-        Me.Button9.TabIndex = 9
-        Me.Button9.Text = "Maguindanao"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'Button8
-        '
-        Me.Button8.Location = New System.Drawing.Point(62, 113)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(97, 38)
-        Me.Button8.TabIndex = 8
-        Me.Button8.Text = "Antipas"
-        Me.Button8.UseVisualStyleBackColor = True
-        '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(509, 282)
+        Me.Button7.Location = New System.Drawing.Point(336, 175)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(78, 38)
+        Me.Button7.Size = New System.Drawing.Size(94, 31)
         Me.Button7.TabIndex = 7
         Me.Button7.Text = "&CLOSE"
         Me.Button7.UseVisualStyleBackColor = True
         '
-        'Button6
+        'CBcity
         '
-        Me.Button6.Location = New System.Drawing.Point(165, 113)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(97, 38)
-        Me.Button6.TabIndex = 6
-        Me.Button6.Text = "M'lang"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.CBcity.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBcity.FormattingEnabled = True
+        Me.CBcity.Location = New System.Drawing.Point(25, 79)
+        Me.CBcity.Name = "CBcity"
+        Me.CBcity.Size = New System.Drawing.Size(232, 26)
+        Me.CBcity.TabIndex = 11
         '
-        'Button5
+        'BtnOpenRecords
         '
-        Me.Button5.Location = New System.Drawing.Point(268, 113)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(97, 38)
-        Me.Button5.TabIndex = 5
-        Me.Button5.Text = "Pres. Roxas"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.BtnOpenRecords.Location = New System.Drawing.Point(263, 77)
+        Me.BtnOpenRecords.Name = "BtnOpenRecords"
+        Me.BtnOpenRecords.Size = New System.Drawing.Size(94, 30)
+        Me.BtnOpenRecords.TabIndex = 12
+        Me.BtnOpenRecords.Text = "Open Records"
+        Me.BtnOpenRecords.UseVisualStyleBackColor = True
         '
-        'Button4
+        'Label1
         '
-        Me.Button4.Location = New System.Drawing.Point(380, 113)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(97, 38)
-        Me.Button4.TabIndex = 4
-        Me.Button4.Text = "Makilala"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(62, 58)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(97, 36)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Arakan"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(165, 58)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(97, 36)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Matalam"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(268, 58)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(97, 36)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Kidapwan"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'BtnMagpet
-        '
-        Me.BtnMagpet.Location = New System.Drawing.Point(380, 58)
-        Me.BtnMagpet.Name = "BtnMagpet"
-        Me.BtnMagpet.Size = New System.Drawing.Size(97, 36)
-        Me.BtnMagpet.TabIndex = 0
-        Me.BtnMagpet.Text = "Magpet"
-        Me.BtnMagpet.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(86, 63)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(94, 13)
+        Me.Label1.TabIndex = 13
+        Me.Label1.Text = "SELECT CITY :"
         '
         'FormReports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(592, 326)
+        Me.ClientSize = New System.Drawing.Size(446, 235)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FormReports"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormReports"
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents BtnMagpet As System.Windows.Forms.Button
-    Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
-    Friend WithEvents Button8 As System.Windows.Forms.Button
-    Friend WithEvents Button9 As System.Windows.Forms.Button
-    Friend WithEvents Button10 As System.Windows.Forms.Button
+    Friend WithEvents BtnOpenRecords As System.Windows.Forms.Button
+    Friend WithEvents CBcity As System.Windows.Forms.ComboBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
